@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Calculator.css">
+</head>
+<body>
+<div class="calculator">
+    <div class="Nana">Nana's Authentic Calculator</div> <br>
+    <input type="text" class="display" placeholder="0" id="rest" disabled>
+
+    <div class="buttons">
+    <button onclick="document.getElementById('rest').value += 7">7</button>
+    <button onclick="document.getElementById('rest').value += 8">8</button>
+    <button onclick="document.getElementById('rest').value += 9">9</button>
+    <button class="op" onclick="document.getElementById('rest').value += '/'">÷</button>
+
+    <button onclick="document.getElementById('rest').value += 4">4</button>
+    <button onclick="document.getElementById('rest').value += 5">5</button>
+    <button onclick="document.getElementById('rest').value += 6">6</button>
+    <button class="op" onclick="document.getElementById('rest').value += '*'">×</button>
+
+         <button onclick="document.getElementById('rest').value += 1">1</button>
+        <button onclick="document.getElementById('rest').value += 2">2</button>
+        <button onclick="document.getElementById('rest').value += 3">3</button>
+        <button class="op" onclick="document.getElementById('rest').value += '-'">−</button>
+
+        <button onclick="document.getElementById('rest').value += 0">0</button>
+        <button onclick="document.getElementById('rest').value += '.'">.</button>
+        <button class="eq" onclick="equal()">=</button>
+        <button class="op" onclick="document.getElementById('rest').value += '+'">+</button>
+
+        <button onclick="back()">back</button>
+        <button onclick="document.getElementById('rest').value += '%'">%</button>
+        <button onclick="off()" class="op">Power OFF</button>
+        <button onclick="del()" class="op">Del</button>
+    </div>
+</div>
+</div>
+
+
+
+
+<script>
+    function equal(){
+           let answer = eval(rest.value)
+            rest.value=answer
+        }
+
+        function del() {
+                rest.value=""
+        }
+        function back(){
+            rest.value = rest.value.slice(0, -1)
+        }
+        // function first(){
+        //     //var rest = Document.getElementById("rest")
+        //     if (rest.placeholder==="OFF"){
+        //         rest.placeholder==="OFF"
+        //     } else{
+        //         alert("else")
+        //     }
+        // }
+        // function off() {
+        //         rest.value=""
+        //         if (rest.value!=="OFF"){
+        //             rest.placeholder="OFF"
+        //         } 
+                
+        // }
+        function off(){
+            rest.value=""
+            if(rest.value==="OFF"){
+                rest.value=""  
+            } else{
+                rest.placeholder = "OFF"
+            }
+        }
+         
+</script>
+</body>
+</html>
